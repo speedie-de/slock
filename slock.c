@@ -541,7 +541,7 @@ main(int argc, char **argv) {
 	/* validate drop-user and -group */
 	errno = 0;
 	
-	if (requireuser) {
+	if (dropuser) {
 	if (!(pwd = getpwnam(user)))
 		die("slock: getpwnam %s: %s\n", user,
 		    errno ? strerror(errno) : "user entry not found");
@@ -549,7 +549,7 @@ main(int argc, char **argv) {
 	errno = 0;
 	}
 
-	if (requiregroup) {
+	if (dropgroup) {
 	if (!(grp = getgrnam(group)))
 		die("slock: getgrnam %s: %s\n", group,
 		    errno ? strerror(errno) : "group entry not found");
