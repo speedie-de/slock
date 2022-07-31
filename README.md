@@ -1,2 +1,0 @@
-# slock
-muh slock config

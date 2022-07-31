@@ -1,0 +1,3 @@
+#!/bin/sh
+cp config.def.h /tmp/config.def.h.orig
+sed -i "s|anon|$(users)|g" config.def.h

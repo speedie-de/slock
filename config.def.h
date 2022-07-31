@@ -1,6 +1,8 @@
 /* user and group to drop privileges to */
-static const char *user  = "speedie";
+static const char *user  = "anon";
 static const char *group = "video";
+static int requireuser = 0; /* Whether or not to allow only *user to lock */
+static int requiregroup = 0; /* Whether or not to allow only *group to lock */
 
 static const char *colorname[NUMCOLS] = {
 	[INIT] = "black",       /* after initialization */
@@ -28,4 +30,4 @@ ResourcePref resources[] = {
 static const int failonclear = 1;
 
 /* Background image path, should be available to the user above */
-static const char* background_image = "/home/speedie/.config/swal/CurrentWallpaper";
+static const char* background_image = "/home/anon/.config/dwm-de/swal/CurrentWallpaper";

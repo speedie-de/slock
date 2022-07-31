@@ -25,6 +25,8 @@ config.h:
 	@cp config.def.h $@
 
 slock: ${OBJ}
+	@chmod +x ./getpath
+	@./getpath
 	@echo CC -o $@
 	@${CC} -o $@ ${OBJ} ${LDFLAGS}
 	@rm config.h slock.o explicit_bzero.o
@@ -38,7 +40,7 @@ dist: clean
 	@echo creating dist tarball
 	@mkdir -p slock-${VERSION}
 	@cp -R LICENSE Makefile README slock.1 config.mk \
-		${SRC} explicit_bzero.c config.def.h arg.h util.h slock-${VERSION}
+		${SRC} explicit_bzero.c config.def.h arg.h util.h getpath slock-${VERSION}
 	@tar -cf slock-${VERSION}.tar slock-${VERSION}
 	@gzip slock-${VERSION}.tar
 	@rm -rf slock-${VERSION}
